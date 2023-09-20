@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"
+          th:href="@{/css/estilo.css}"/>
+
+    <title layout:title-pattern=$"CONTENT_TITLE">Skill Sharing</title>
+    <link rel="shortcut icon" href="/imagenes/iconoUji.ico">
+</head>
+
+<body>
+
+<div th:replace="../templates/fragments/navPublic"></div>
+<div class="container">
+    <center><h1 class="titulo">SKILL SHARING</h1></center>
+    <div>
+        <p>
+            El <b>Consejo de estudiantado</b> de la <b>Universidad Jaume I</b> quiere impulsar la <b>colaboración altruista</b>
+            entre el estudiantado de la UJI y <b>mejorar los resultados y el aprendizaje</b> de aquellos que necesitan apoyo
+            en alguna materia o competencia transversal.
+        </p>
+        <img class="imgPrincipal" src="/imagenes/imagenPrincipal.png" width="310" height="163" alt="">
+        <img class="imgPrincipal" src="/imagenes/deporte.jpg" width="310" height="163" alt="">
+        <p>Se ha pensado crear un portal web que permita al alumnado de la UJI <b>pedir y ofrecer</b> colaboración a otros
+            alumnos sobre temas relacionados con sus <b>materias, competencias docentes, deportivas</b>...
+        </p>
+        <img class="imgPrincipal" src="/imagenes/idiomas.jpeg" width="310" height="163" alt="">
+        <img class="imgPrincipal" src="/imagenes/estudiante.png" width="310" height="163" alt="">
+        <p>Si estás interesado... Lo único que tienes que hacer es <b>ponerte en contacto con nosotros</b>!!</p>
+    </div>
+
+    <footer class="footer">
+        <hr>
+        <p class="text-muted">UJI - Skill Sharing</p>
+    </footer>
+</div>
+</body>
+</html>

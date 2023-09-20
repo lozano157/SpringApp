@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"
+          th:href="@{/css/estilo.css}"/>
+
+    <meta charset="UTF-8">
+    <title>nav</title>
+</head>
+<body>
+
+<div id="header">
+    <ul class="nav">
+        <li class="nav-item" ><a class="nav-link" href="/" th:href="@{/}">Página principal</a></li>
+        <li class="nav-item" ><a class="nav-link" href="/" th:href="@{/oferta/list}">Ofertas</a></li>
+        <li class="nav-item" ><a class="nav-link" href="/" th:href="@{/demanda/list}">Demandas</a></li>
+        <li class="nav-item" ><a class="nav-link" href="/" th:href="@{/login}">Iniciar sesión</a></li>
+    </ul>
+</div>
+</body>
+</html>

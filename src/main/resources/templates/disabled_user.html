@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" type="text/css" href="css/estilo.css"
+      th:href="@{/css/estilo.css}"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Usuario deshabilitado</title>
+    <link rel="shortcut icon" href="/imagenes/iconoUji.ico">
+</head>
+<body>
+<div class="container">
+    <br>
+    <div><img class="imgUsuarioCancelado" src="imagenes/cancelado.jpg" width="310" height="163" alt=""></div>
+    <br>
+    <h2>Lo sentimos, su usuario ha sido deshabilitado.</h2>
+    <p>Por favor ponte en contacto con administracion o inicia sesion con otra cuenta.</p>
+    <br>
+</div>
+<div th:replace="../templates/fragments/navPublic"></div>
+<footer class="footer">
+    <hr>
+    <p class="text-muted">UJI - Skill Sharing</p>
+</footer>
+</body>
+</html>

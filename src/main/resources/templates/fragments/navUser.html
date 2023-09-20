@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"
+          th:href="@{/css/estilo.css}"/>
+    <meta charset="UTF-8">
+    <title>nav</title>
+</head>
+<body>
+<div id="header">
+        <ul class="nav">
+            <li><a href="/" th:href="@{/inicio/userIndex}">Página principal</a></li>
+            <li><a href="/" th:href="@{/oferta/listOfertasUser}">Ofertas</a></li>
+            <li><a href="/" th:href="@{/demanda/listDemandasUser}">Demandas</a></li>
+            <li><a>Mi cuenta</a>
+
+                <ul class="navbar-nav mr-auto">
+                    <li><a href="/" th:href="@{/oferta/listMisOfertas}">Mis Ofertas</a></li>
+                    <li><a href="/" th:href="@{/demanda/listMisDemandas}">Mis Demandas</a></li>
+                    <li><a href="/" th:href="@{/colaboracion/listMisColaboraciones}">Mis Colaboraciones</a></li>
+                    <li><a href="/" th:href="@{/colaboracion/listMisColaboracionesValoradas}">Mis Colaboraciones Valoradas</a></li>
+                    <li><a href="/" th:href="@{/estudiante/perfil}">Mi perfil</a></li>
+                </ul>
+
+            </li>
+            <li><a href="/" th:href="@{/logout}">Cerrar Sesión</a></li>
+        </ul>
+</div>
+</body>
+</html>

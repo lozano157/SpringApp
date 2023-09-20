@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mis Demandas</title>
+    <link rel="shortcut icon" href="/imagenes/iconoUji.ico">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"
+          th:href="@{/css/estilo.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Mis Demandas</h1>
+
+    <div th:if="${nombre != null}" class="alert alert-success text-center alerta" role="alert">
+        <div class="text-center"><p>Se ha <b>generado</b> correctamente la demanda con skill </p>
+            <h3 th:text="${{nombre}}"></h3>
+        </div>
+    </div>
+
+    <div th:if="${editado != null}" class="alert alert-success text-center alerta" role="alert">
+        <div class="text-center"><p>Se ha <b>editado</b> correctamente la demanda elegida </p>
+        </div>
+    </div>
+
+    <div th:if="${eliminado != null}" class="alert alert-success text-center alerta" role="alert">
+        <div class="text-center"><p>Se ha <b>eliminado</b> correctamente la demanda elegida </p>
+        </div>
+    </div>
+
+    <div th:replace="../templates/fragments/filtroDemandas"></div>
+
+    <div class="botonesAñadir">
+    <a href="add" class="btn btn-primary" role="button">Añadir Demanda</a>
+    </div>
+    <div th:if="${#lists.isEmpty(demandas)}" layout:fragment="content">
+        No tienes demandas.
+    </div>
+
+    <div>
+        <section class="listado" th:if="${not #lists.isEmpty(demandas)}">
+            <article th:each="demanda: ${demandas}" class="anuncio">
+                <figure class="estudiante">
+                    <img th:src="${demanda.rutaImgSkill}" class="fotoSkill">
+                </figure>
+                <div class="info">
+                        <p th:text="${{demanda.descripcion}}"></p>
+                        <table>
+                            <tr><td><p class="etiquetaSkill">Skill: </p></td> <td><p class="nombreSkill" th:text="${{demanda.nombreSkill}}"></p></td></tr>
+                            <tr><td><p class="etiquetaNivel">Nivel: </p></td><td><p class="nivelSkill" th:text="${demanda.nivelSkill}"></p></td></tr>
+                        </table>
+                </div>
+                <div class="botones">
+                    <table>
+                        <tr><td><p class="etiquetaHoras">Horas: </p></td> <td><p class="horas" th:text="${{demanda.horas}}"></p></td></tr>
+                        <tr><td><p class="etiquetaInicio">Inicio: </p></td><td><p class="iniFecha" th:text="${demanda.iniFecha}"></p></td></tr>
+                        <tr><td><p class="etiquetaFinal">Final: </p></td> <td><p class="finFecha" th:text="${demanda.finFecha}"></p></td></tr>
+                    </table>
+                    <div>
+                        <a th:href="@{/demanda/update/{nom}(nom=${demanda.idDemanda})}" class="btn btn-warning" role="button">Editar</a>
+                        <a th:href="@{/demanda/delete/{nom}/(nom=${demanda.idDemanda})}" class="btn btn-danger" role="button">Borrar</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
+<div th:replace="../templates/fragments/navUser"></div>
+
+<footer class="footer">
+    <hr>
+    <p class="text-muted">UJI - Skill Sharing</p>
+</footer>
+</body>
+</html>

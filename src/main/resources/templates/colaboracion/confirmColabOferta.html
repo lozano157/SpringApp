@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Confirmar Colaboracion</title>
+    <link rel="shortcut icon" href="/imagenes/iconoUji.ico">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"
+          th:href="@{/css/estilo.css}"/>
+</head>
+<body>
+<div th:replace="../templates/fragments/navUser"></div>
+
+<div class="container">
+
+    <h1>Confirmar Colaboracion</h1>
+    <div class="container">
+    </div>
+
+
+    <article class="anuncio">
+        <figure class="estudiante">
+            <img th:src="${estudiante.rutaimg}" class="fotoPerfilMasGrande">
+        </figure>
+        <div class="info">
+            <h3 class="nombre" th:text="${estudiante.nombre} + ' ' + ${estudiante.apellido}"></h3>
+            <hgroup>
+                <div class="infoEstudiante2">
+                    <table>
+                        <tr>
+                            <td><p class="etiquetaEmail">Email: </p></td>
+                            <td><p class="" th:text="${{estudiante.email}}"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="etiquetaGrado">Grado: </p></td>
+                            <td><p class="" th:text="${estudiante.grado}"></p></td>
+                        </tr>
+                    </table>
+                </div>
+            </hgroup>
+        </div>
+
+        <div class="info infoEstudiante3">
+            <br>
+            <table>
+                <tr>
+                    <td><p class="etiquetaEdad">Edad: </p></td>
+                    <td><p class="" th:text="${estudiante.edad}"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="etiquetaSexo">Sexo: </p></td>
+                    <td><p class="" th:text="${estudiante.sexo}"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="etiquetaHoras">Horas: </p></td>
+                    <td><p class="" th:text="${estudiante.horas}"></p></td>
+                </tr>
+            </table>
+        </div>
+    </article>
+
+    <h2>Oferta:</h2>
+    <article class="anuncio">
+        <div class="info">
+            <figure class="estudiante">
+                <img th:src="${oferta.rutaImgSkill}" class="fotoSkill">
+            </figure>
+            <div class="skill">
+                <p th:text="${{oferta.descripcion}}"></p>
+            </div>
+        </div>
+        <div class="botones">
+            <table>
+                <tr>
+                    <td><p class="etiquetaHoras">Horas: </p></td>
+                    <td><p class="horas" th:text="${{oferta.horas}}"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="etiquetaInicio">Inicio: </p></td>
+                    <td><p class="iniFecha" th:text="${oferta.iniFecha}"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="etiquetaFinal">Final: </p></td>
+                    <td><p class="finFecha" th:text="${oferta.finFecha}"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="etiquetaSkill">Skill: </p></td>
+                    <td><p class="nombreSkill" th:text="${{oferta.nombreSkill}}"></p></td>
+                </tr>
+                <tr>
+                    <td><p class="etiquetaNivel">Nivel: </p></td>
+                    <td><p class="nivelSkill" th:text="${oferta.nivelSkill}"></p></td>
+                </tr>
+            </table>
+
+        </div>
+    </article>
+    <div class="botones botonesLinea">
+        <a class="btn btn-primary" role="button"
+           th:href="@{/colaboracion/addColaboracionOferta/{idOferta}(idOferta=${oferta.idOferta})}">Colaborar</a>
+        <a role="button" class="btn btn-warning" th:href="@{/oferta/listOfertasUser}">Cancelar</a>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <p class="text-muted">UJI - Skill Sharing</p>
+</footer>
+</body>
+</html>
